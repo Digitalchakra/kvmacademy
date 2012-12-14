@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install group="system" method="upgrade" type="plugin" version="1.5.0">
+	<name>System - Zen Grid Framework</name>
+	<author>##author.name##</author>
+	<creationDate>##today##</creationDate>
+	<copyright>##copyright##</copyright>
+	<license>##license##</license>
+	<authorEmail>##author.email##</authorEmail>
+	<authorUrl>##author.url##</authorUrl>
+	<version>##version##</version>
+	<description><![CDATA[
+		<p style="line-height:180%;font-size:1.2em">
+			<a href="http://www.joomlabamboo.com">
+				<img alt="Zen Grid Framework" src="http://www.joomlabamboo.com/images/stories/zengrid2/zengridframework2.png" style="float:left;margin:0 20px 20px 0px"/></a>
+			<br style="clear:both"/>The Zen Grid Framework v2.0 is a feature rich, mobile friendly and easy to use Joomla template framework.
+			<br/>
+			Please visit the
+			<a href="http://docs.joomlabamboo.com/zen-grid-framework">
+				Zen Grid Framework Knowledgebase</a>for more details.
+			<br/>
+			<br/>
+			This plugin must be enabled for your Zen grid framework compatible template to operate. The plugin does not contain any configuration options as all plugin parameters are controlled via the template.</p>]]></description>
+	<files>
+		<filename plugin="zengridframework">zengridframework.php</filename>
+		<folder>zengridframework</folder>
+	</files>
+	<media destination="zengridframework" folder="media/zengridframework">
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>helpers</folder>
+		<folder>imagecache</folder>
+		<folder>js</folder>
+	</media>
+	<languages>
+		<language tag="en-GB">zengridframework/language/en-GB.plg_system_zengridframework.ini</language>
+	</languages>
+	<params/>
+</install>

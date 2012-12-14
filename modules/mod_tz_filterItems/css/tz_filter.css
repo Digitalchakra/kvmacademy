@@ -1,0 +1,115 @@
+.selecter {
+    position: relative;
+}
+.selecterBtns {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+}
+.selecterBtns #portfolio_category_sorter li{
+    padding-right: 10px;
+    list-style: none;
+}
+.selecterBtns li.sorter_title {
+    padding-left: 0;
+}
+.selecterBtns li {
+    float: left;
+    padding: 0 15px;
+}
+.selecterBtns li a.active {
+    color: #F5D175;
+}
+.selecterBtns li a {
+    color: #777777;
+}
+.itemList #itemListPrimary {
+    margin: auto;
+    width: 970px;
+}
+.selecterContent ul {
+    min-height: 250px;
+}
+#itemListPrimary ul li.itemContainer {
+    padding-bottom: 12px;
+    width: 25%;
+}
+li.itemContainer {
+    float: left;
+    height: 190px;
+    overflow: hidden;
+    list-style:none;
+}
+.boxgrid:hover{
+    cursor: pointer;
+}
+#itemListPrimary .catItemView {
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    display: block;
+    float: left;
+}
+.boxgrid {
+    box-shadow: 0 0 5px #CCCCCC inset;
+    float: left;
+    height: 178px;
+    overflow: hidden;
+    position: relative;
+    width: 220px;
+    z-index: 0;
+    background: #000;
+}
+.boxgrid img {
+    border: 0 none;
+    height: 180px;
+    left: 0;
+    margin: 0 !important;
+    min-height: 180px;
+    min-width: 220px;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+.content-item {
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+div.catItemHeader h3.catItemTitle {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 110%;
+    margin: 0;
+    padding:0;
+}
+#bd div.catItemHeader h3.catItemTitle a {
+    font-size: 24px;
+    padding: 10px 20px 0;
+    text-transform: capitalize;
+}
+div.catItemIntroText {
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
+    padding: 4px 0 0 12px;
+    color: #eee;
+}
+#bd .catItemIntroText p {
+    color: #EFEFEF;
+    line-height: 15px;
+}
+.catItemReadMore a {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 22px 10px;
+     color: #F5D175;
+}
+a.photo {
+    float: right;
+    height: 16px;
+    margin-right: 20px;
+    width: 16px;
+}

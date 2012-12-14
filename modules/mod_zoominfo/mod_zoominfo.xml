@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" method="upgrade" client="site">
+	<name>Zoom Info gallery</name>
+	<author>Daniel Pardons</author>
+	<creationDate>14 March 2012</creationDate>
+	<copyright>2012, Joompad.be</copyright>
+	<license>GPLv2.0 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<authorEmail>daniel.pardons@joompad.be</authorEmail>
+	<authorUrl>www.joompad.be</authorUrl>
+	<version>1.7.3a</version>
+	<description>Zoominfo module based on jQuery Addy Osmani tutorial (www.addyosmani.com)<p>Support module multiple instances on the same page by defining a gallery id. Adapt settings for Gallery and eventually inline css for title and teaser texts.</p></description>	
+
+	<files>
+		<filename module="mod_zoominfo">mod_zoominfo.php</filename>
+		<filename>helper.php</filename>
+		<filename>License.txt</filename>		
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>elements</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_zoominfo.ini</language>
+	</languages>
+	<config>	
+		<fields addfieldpath="/modules/mod_zoominfo/elements" name="params">
+			
+			<fieldset name="MOD_ZOOMINFO_GALLERY_PARAMETERS">
+				<field name="load_JQuery" type="radio" default="1" label="MOD_ZOOMINFO_LOADJQUERY" description="MOD_ZOOMINFO_LOADJQUERY_DESC">
+					<option value="1">MOD_ZOOMINFO_YES</option>
+					<option value="0">MOD_ZOOMINFO_NO</option>
+				</field>
+				<field type="spacer" default="MOD_ZOOMINFO_GALLERY_SETTINGS"/> 	
+				<field name="module_id" type="text" default="" label="MOD_ZOOMINFO_MODULEID" description="MOD_ZOOMINFO_MODULEID_DESC" />	
+				<field name="external_url" type="text" size="80" default="" label="MOD_ZOOMINFO_EXTERNALURL" description="MOD_ZOOMINFO_EXTERNALURL_DESC" />
+				<field name="folder" type="text" size="60" default="modules/mod_zoominfo/images/" label="MOD_ZOOMINFO_IMAGEFOLDER" description="MOD_ZOOMINFO_IMAGEFOLDER_DESC" />
+				<field name="add_cleardiv" type="radio" default="0" label="MOD_ZOOMINFO_ADDCLEARDIV" description="MOD_ZOOMINFO_ADDCLEARDIV_DESC">
+					<option value="1">MOD_ZOOMINFO_YES</option>
+					<option value="0">MOD_ZOOMINFO_NO</option>
+				</field>
+				<field name="gallery_left_margin" type="text" default="0" label="MOD_ZOOMINFO_GALLERYLEFTMARGIN" description="MOD_ZOOMINFO_GALLERYLEFTMARGIN_DESC" />
+				<field name="gallery_width" type="text" default="550px" label="MOD_ZOOMINFO_GALLERYWIDTH" description="MOD_ZOOMINFO_GALLERYWIDTH_DESC" />
+				<field name="gallery_bgcolor" type="text" default="black" label="MOD_ZOOMINFO_GALLERYBG" description="MOD_ZOOMINFO_GALLERYBG_DESC" />
+				<field name="gallery_layout" type="radio" default="0" label="MOD_ZOOMINFO_GALLERYLAYOUT" description="MOD_ZOOMINFO_GALLERYLAYOUT_DESC">
+					<option value="0">MOD_ZOOMINFO_LEFT</option>
+					<option value="1">MOD_ZOOMINFO_RIGHT</option>
+				</field>
+				<field name="gallery_images" type="text" default="1" label="MOD_ZOOMINFO_GALLERYIMAGES" description="MOD_ZOOMINFO_GALLERYIMAGES_DESC" />
+				<field name="gallery_images_use" type="list" default="0" label="MOD_ZOOMINFO_GALLERYIMAGESUSE" description="MOD_ZOOMINFO_GALLERYIMAGESUSE_DESC">
+					<option value="0">MOD_ZOOMINFO_FIXED</option>
+					<option value="1">MOD_ZOOMINFO_RANDOMIZE</option>
+				</field>
+				<field name="effect_duration" type="text" default="300" label="MOD_ZOOMINFO_EFFECTDURATION" description="MOD_ZOOMINFO_EFFECTDURATION_DESC" />		
+				<field name="image_color_target" type="list" default="1" label="MOD_ZOOMINFO_IMAGE_COLOR_TARGET" description="MOD_ZOOMINFO_IMAGE_COLOR_TARGET_DESC">
+					<option value="0">MOD_ZOOMINFO_BACKGROUND</option>
+					<option value="1">MOD_ZOOMINFO_TITLE</option>
+					<option value="2">MOD_ZOOMINFO_TEASER</option>
+					<option value="3">MOD_ZOOMINFO_TITLE_TEASER</option>
+				</field>
+				
+				<field type="spacer" default="MOD_ZOOMINFO_IMAGE_SETTINGS"/>		
+				<field name="image_width" type="text" default="215px" label="MOD_ZOOMINFO_IMAGEWIDTH" description="MOD_ZOOMINFO_IMAGEWIDTH_DESC" />
+				<field name="image_height" type="text" default="260px" label="MOD_ZOOMINFO_IMAGEHEIGHT" description="MOD_ZOOMINFO_IMAGEHEIGHT_DESC" />	
+				<field name="image_margin" type="text" default="5px" label="MOD_ZOOMINFO_IMAGE_MARGIN" description="MOD_ZOOMINFO_IMAGE_MARGIN_DESC" />			
+				<field name="image_width_full" type="text" default="" label="MOD_ZOOMINFO_IMAGEWIDTHFULL" description="MOD_ZOOMINFO_IMAGEWIDTHFULL_DESC" />
+				<field name="image_height_full" type="text" default="" label="MOD_ZOOMINFO_IMAGEHEIGTHFULL" description="MOD_ZOOMINFO_IMAGEHEIGTHFULL_DESC" />
+				<field name="image_width_resized" type="text" default="80px" label="MOD_ZOOMINFO_IMAGEWIDTHRESIZED" description="MOD_ZOOMINFO_IMAGEWIDTHRESIZED_DESC" />
+
+
+				<field type="spacer" default="MOD_ZOOMINFO_BOX_SETTINGS"/>
+				<field name="box_css" type="textarea" rows="5" cols="42" default="" label="MOD_ZOOMINFO_BOXCSS" description="MOD_ZOOMINFO_BOXCSS_DESC" />		
+				<field name="title_color" type="text" default="grey" label="MOD_ZOOMINFO_TITLECOLOR" description="MOD_ZOOMINFO_TITLECOLOR_DESC" />
+				<field name="title_css" type="textarea" rows="6" cols="42" default="display: block; font-size: 18px; font-weight: bold; line-height: 20px; font-family: arial;  margin-left: 10px; margin-right: 10px; margin-bottom: 0.5em; margin-top: 0.5em;" label="MOD_ZOOMINFO_TITLECSS" description="MOD_ZOOMINFO_TITLECSS_DESC" />
+				<field name="teaser_nl2br" type="radio" default="0" label="MOD_ZOOMINFO_TEASERNL2BR" description="MOD_ZOOMINFO_TEASERNL2BR_DESC">
+					<option value="0">MOD_ZOOMINFO_DISABLE</option>
+					<option value="1">MOD_ZOOMINFO_ENABLE</option>
+				</field>
+				<field name="teaser_color" type="text" default="white" label="MOD_ZOOMINFO_TEASERCOLOR" description="MOD_ZOOMINFO_TEASERCOLOR_DESC" />
+				<field name="teaser_css" type="textarea" rows="6" cols="42" default="display: block; font-size: 12px; font-weight: normal; font-family: arial; margin-left: 10px; margin-right: 10px; margin-bottom: 0.5em; margin-top: 0.5em;" label="MOD_ZOOMINFO_TEASERCSS" description="MOD_ZOOMINFO_TEASERCSS_DESC" />		
+			</fieldset>
+			
+			
+			<fieldset name="IMAGES_SETTINGS_01_04">
+				<field name="Image 01" type="spacer" default="=== Image 01 ===" label="Image 01" description="" />
+				<field name="image_img1" type="text" size="60" default="image01.jpg" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor1" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt1" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title1" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser1" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url1" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url1" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 02" type="spacer" default="=== Image 02 ===" label="Image 02" description="" />
+				<field name="image_img2" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor2" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt2" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title2" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser2" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url2" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url2" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 03" type="spacer" default="=== Image 03 ===" label="Image 03" description="" />
+				<field name="image_img3" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor3" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt3" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title3" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser3" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url3" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url3" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 04" type="spacer" default="=== Image 04 ===" label="Image 04" description="" />
+				<field name="image_img4" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor4" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt4" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title4" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser4" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url4" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url4" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+			</fieldset>
+			<fieldset name="IMAGES_SETTINGS_05_08">
+				<field name="Image 05" type="spacer" default="=== Image 05 ===" label="Image 05" description="" />
+				<field name="image_img5" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor5" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt5" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title5" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser5" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url5" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url5" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 06" type="spacer" default="=== Image 06 ===" label="Image 06" description="" />
+				<field name="image_img6" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor6" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt6" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title6" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser6" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url6" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url6" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 07" type="spacer" default="=== Image 07 ===" label="Image 07" description="" />
+				<field name="image_img7" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor7" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt7" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title7" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC_DESC" />
+				<field name="image_teaser7" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url7" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url7" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 08" type="spacer" default="=== Image 08 ===" label="Image 08" description="" />
+				<field name="image_img8" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor8" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt8" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title8" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser8" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url8" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url8" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="IMAGES_SETTINGS_09_12">
+				<field name="Image 09" type="spacer" default="=== Image 09 ===" label="Image 09" description="" />
+				<field name="image_img9" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor9" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt9" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title9" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser9" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url9" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url9" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 10" type="spacer" default="=== Image 10 ===" label="Image 10" description="" />
+				<field name="image_img10" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor10" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt10" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title10" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser10" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url10" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url10" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 11" type="spacer" default="=== Image 11 ===" label="Image 11" description="" />
+				<field name="image_img11" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor11" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt11" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title11" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser11" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url11" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url11" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 12" type="spacer" default="=== Image 12 ===" label="Image 12" description="" />
+				<field name="image_img12" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor12" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt12" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title12" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser12" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url12" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url12" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+			</fieldset>
+				
+			<fieldset name="IMAGES_SETTINGS_13_16">
+				<field name="Image 13" type="spacer" default="=== Image 13 ===" label="Image 13" description="" />
+				<field name="image_img13" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor13" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt13" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title13" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser13" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url13" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url13" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 14" type="spacer" default="=== Image 14 ===" label="Image 14" description="" />
+				<field name="image_img14" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor14" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt14" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title14" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser14" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url14" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url14" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 15" type="spacer" default="=== Image 15 ===" label="Image 15" description="" />
+				<field name="image_img15" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor15" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt15" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title15" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser15" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url15" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url15" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 16" type="spacer" default="=== Image 16 ===" label="Image 16" description="" />
+				<field name="image_img16" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor16" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt16" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title16" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser16" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url16" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url16" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+			</fieldset>	
+
+			<fieldset name="IMAGES_SETTINGS_17_20">
+				<field name="Image 17" type="spacer" default="=== Image 17 ===" label="Image 17" description="" />
+				<field name="image_img17" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor17" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt17" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title17" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser17" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url17" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url17" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 18" type="spacer" default="=== Image 18 ===" label="Image 18" description="" />
+				<field name="image_img18" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor18" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt18" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title18" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser18" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url18" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url18" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 19" type="spacer" default="=== Image 19 ===" label="Image 19" description="" />
+				<field name="image_img19" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor19" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt19" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title19" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser19" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url19" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url19" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+
+				<field name="Image 20" type="spacer" default="=== Image 20 ===" label="Image 20" description="" />
+				<field name="image_img20" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGFILENAME" description="MOD_ZOOMINFO_IMGFILENAME_DESC" />
+				<field name="image_teaser_bgcolor20" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTEASERBGCOLOR" description="MOD_ZOOMINFO_IMGTEASERBGCOLOR_DESC" />
+				<field name="image_alt20" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGALT" description="MOD_ZOOMINFO_IMGALT_DESC" />
+				<field name="image_title20" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGTITLE" description="MOD_ZOOMINFO_IMGTITLE_DESC" />
+				<field name="image_teaser20" type="textarea" filter="raw" rows="10" cols="42" default="" label="MOD_ZOOMINFO_IMGTEASER" description="MOD_ZOOMINFO_IMGTEASER_DESC" />
+				<field name="image_url20" type="text" size="60" default="" label="MOD_ZOOMINFO_IMGURL" description="MOD_ZOOMINFO_IMGURL_DESC" />
+				<field name="target_url20" type="radio" default="_self" label="MOD_ZOOMINFO_IMGTARGET" description="MOD_ZOOMINFO_IMGTARGET_DESC">
+					<option value="_self">MOD_ZOOMINFO_SELF_BROWSER</option>
+					<option value="_blank">MOD_ZOOMINFO_OPEN_NEW_BROWSER</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="1" label="MOD_ZOOMINFO_CACHING"
+					description="MOD_ZOOMINFO_CACHING_DESC">
+					<option value="1">MOD_ZOOMINFO_USE_GLOBAL</option>
+					<option value="0">MOD_ZOOMINFO_NO_CACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="MOD_ZOOMINFO_CACHE_TIME"
+					description="MOD_ZOOMINFO_CACHE_TIME_DESC" />
+			</fieldset>	
+		</fields>
+	</config>
+</extension>

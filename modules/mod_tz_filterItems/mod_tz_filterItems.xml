@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" client="site" method="upgrade">
+	<name>TZ Filter Items of Category</name>
+	<author>Sunland .,JSC</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>copyright Copyright (C) 2011 Sunland .,JSC. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@templaza.com</authorEmail>
+	<authorUrl>http://www.TemPlaza.com</authorUrl>
+	<version>1.3</version>
+	<description>Filter Items module  Technical Support:  Forum - http://www.TemPlaza.com/forum/</description>
+	<files>
+		<filename module="mod_tz_filterItems">mod_tz_filterItems.php</filename>
+        <filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_tz_filterItems.xml</filename>
+        <folder>tmpl</folder>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>elements</folder>
+	</files>
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tz_filterItems.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tz_filterItems.sys.ini</language>
+	</languages>
+    <config>
+	<fields name="params">
+	<fieldset name="basic" addfieldpath="/modules/mod_tz_filterItems/elements/">
+
+		<field name="count" type="text" default="12" label="Count" description="The number of items to display (default 5)" />
+        <field name="choose" type="radio" default="1" label="Content Manager">
+            <option value="0">Com Content</option>
+            <option value="1">Com K2</option>
+        </field>
+        <field name="category_content" type="categories" default="" label="Select Category"/>
+        <field name="category_id" type="categoriesmultiple" default="" label="Select one or more categories" description="Select one ore more categories for which you want to filter an items list. Select none to fetch items from all categories." />
+        <field name="getChildren" type="radio" default="0" label="Fetch items from children categories" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </field>
+        <field name="itemImage" type="radio" default="1" label="Image" description="">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </field>
+        <field name="itemImgSize" type="list" default="Small" label="Image size" description="">
+          <option value="XSmall">XSmall</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+          <option value="XLarge">XLarge</option>
+        </field>
+        <field name="itemIntroText" type="radio" default="1" label="Introtext" description="">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </field>
+        <field name="limit" type="text" default="80" label="Limit Text"/>
+        <field name="loadjquery" type="radio" default="0" label="Load jQuery Library" description="">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+        
+	</fieldset>
+	</fields>
+
+	</config>
+
+</extension>

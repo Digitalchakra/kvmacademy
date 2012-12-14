@@ -1,0 +1,43 @@
+
+.kwicks {
+	/* recommended styles for kwicks ul container */
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+    width:300px;
+    height:250px;
+}
+.kwicks li{
+	/* these are required, but the values are up to you (must be pixel) */
+	height: 200px;
+	/*do not change these */
+	display: block;
+	overflow: hidden;
+	padding: 0;  /* if you need padding, do so with an inner div (or implement your own box-model hack) */
+    text-align: center;
+}
+.kwicks.horizontal li {
+	/* This is optional and will be disregarded by the script.  However, it should be provided for non-JS enabled browsers. */
+	margin-right: 125px; /*Set to same as spacing option. */
+	float: left;
+}
+.kwicks.vertical  li{
+	/* This is optional and will be disregarded by the script.  However, it should be provided for non-JS enabled browsers. */
+	margin-bottom: 5px; /*Set to same as spacing option. */	
+}
+
+.kwicks li h2{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    color:#eeeeee;
+    background: #000;
+    opacity: 0.8;
+    width: 100%;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 15px 30px;
+    height: 30px;
+}
