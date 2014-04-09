@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" client="site"
+	method="upgrade"
+>
+	<name>TZ Accordion Slideshow </name>
+	<author>Sunland .,JSC</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>copyright Copyright (C) 2011 Sunland .,JSC. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@templaza.com</authorEmail>
+	<authorUrl>http://www.TemPlaza.com</authorUrl>
+	<version>1.1</version>
+	<description>SLIDESHOW Accordion module  Technical Support:  Forum - http://www.TemPlaza.com/forum/</description>
+	<files>
+		<filename module="mod_tz_accordion_slideshow">mod_tz_accordion_slideshow.php</filename>
+        <filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_tz_accordion_slideshow.xml</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <folder>images</folder>
+        <folder>elements</folder>
+	</files>
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tz_accordion_slideshow.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tz_accordion_slideshow.sys.ini</language>
+	</languages>
+	<config>
+	<fields name="params">
+	<fieldset name="basic" addfieldpath="/modules/mod_tz_accordion_slideshow/elements" >
+		<field name="display" type="radio" default="0" label="Display" description="Display Description">
+				<option value="0">Joomla Content Category</option>
+				<option value="1">K2 Category</option>
+		</field>
+		<field name="mycategory" type="categories" extension="com_content" label="Select category" description="" />
+		<field name="k2category" type="k2categories" default="" label="Select K2 category" description="Select one category for which you want to filter an items list." />
+		<field name="@spacer0" type="spacer" default="&lt;hr /&gt;&lt;B&gt;Images Large&lt;/B&gt;" label="" description="" />
+
+		<field name="count" type="text" default="4" label="Count" description="Number images"/>
+
+		<field name="easing" type="list" default="easeInOutQuad" label="Animation" description="Change your effect">
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</field>
+
+        <field name = "space" type="text" default="3" label="Space images"/>
+        <field name = "duration" type="text" default="1000" label="Duration effect images"/>
+        <field name = "event" type="list" default="mouseover" label="Event">
+            <option value="mouseover">Mouse Over</option>
+			<option value="click">Click</option>
+			<option value="dblclick">Double Click</option>
+        </field>
+        <field name="stick" type="radio" default="1" label="Stick">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+		</field>
+        <field name="vertical" type="radio" default="0" label="Is Vertical">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+		</field>
+        <field name="width" default="300" type="text"/>
+        <field name="height" default="200" type="text"/>
+
+		<field name="@spacer3" type="spacer" default="&lt;hr /&gt;&lt;B&gt;jQuery&lt;/B&gt;" label="" description="" />
+		<field name="loadjquery" type="radio" default="1" label="Load jQuery" description="LOAD JQUERY JAVASCRIPT">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+		</field>
+
+	</fieldset>
+	<fieldset name="advanced">
+		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	</fieldset>
+	</fields>
+	</config>
+
+</extension>

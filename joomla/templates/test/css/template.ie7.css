@@ -1,0 +1,110 @@
+/* Created by Artisteer v4.0.0.58475 */
+
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+
+.kvm-textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
+
+.kvm-header
+{
+   z-index: 1;
+}
+
+.kvm-hmenu>li, .kvm-hmenu>li>a
+{
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
+}
+ul.kvm-hmenu, ul.kvm-hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+ul.kvm-hmenu>li:first-child {
+   padding-right:1px;
+}
+ul.kvm-hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='kvm-hmenu-separator');
+}
+ul.kvm-hmenu>li>span.kvm-hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -1px;
+   width: 1px;
+   height: 65px;
+   background: url('../images/menuseparator.png') center center no-repeat;
+}
+ul.kvm-hmenu>li:first-child>span.kvm-hmenu-separator
+{
+   display:none;
+}
+
+.kvm-content-layout, .kvm-content-layout-row, .kvm-layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.kvm-layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+
+input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+* html input[type="text"]
+{
+   margin :0;
+}
+
+form.kvm-search>input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+form.kvm-search div>input[type="text"]
+{
+   width: 100%;
+}
+
+* html form.kvm-search>input[type="text"] 
+{
+   margin :0;
+}
+
+.kvm-postheadericons span{
+   zoom: 1;
+}
+.kvm-postcontent {
+   height: 1%;
+}
+
+.kvm-postfootericons span{
+   zoom: 1;
+}
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.kvm-sidebar1 
+{
+   width: auto;
+   float:none;
+}
+

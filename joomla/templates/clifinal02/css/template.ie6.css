@@ -1,0 +1,256 @@
+/* begin Page */
+
+/* Created by Artisteer v3.1.0.48375 */
+
+#kvm-page-background-glare{
+   display: none;
+}
+.cleared {
+   width:1px;
+}
+/* Start Box */
+.kvm-box, .kvm-box-body {
+   zoom:1;
+}
+/* End Box */
+/* Start Bar */
+.kvm-bar{
+   zoom:1;
+}
+/* End Bar */
+/* end Page */
+
+/* begin Header */
+.kvm-header {
+   zoom:expression(runtimeStyle.zoom=1);
+   z-index: 1;
+}
+
+/* end Header */
+
+/* begin TextBlock */
+div.kvm-textblock
+{
+   font-size: 1px;
+   background: none;
+   behavior: expression(this.runtimeStyle.filter?'':this.runtimeStyle.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+artGetStyleUrl()+"../images/textblock-bg.png',sizingMethod='scale')");
+}
+/* end TextBlock */
+
+/* begin Menu */
+ul.kvm-hmenu, ul.kvm-hmenu ul, ul.kvm-hmenu li, ul.kvm-hmenu a {
+   zoom:1;
+}
+.kvm-hmenu li.kvm-hmenuhover{
+   z-index: 10000;
+}
+.kvm-hmenu .kvm-hmenuhoverUL{
+   visibility: visible;
+   top: 100%;
+   left: 0;
+}
+.kvm-hmenu .kvm-hmenuhoverUL .kvm-hmenuhoverUL{
+   top: 0;
+   left: 100%;
+}
+.kvm-hmenu ul li {
+   float: left !important;
+   clear: both;
+   width: 100%;
+}
+.kvm-nav
+{
+   zoom: 1;
+   height: 65px;
+   background:#BCC1AE;
+}
+
+/* end Menu */
+
+/* begin MenuItem */
+.kvm-hmenu a 
+{
+   display:inline-block;
+   color: #BCC1AD;
+   padding: 0 26px;
+   line-height: 65px;
+   text-align: center;
+}
+
+.kvm-hmenu a.active 
+{
+   color: #BCC1AD;
+   background-color:#7F8372;
+}
+
+.kvm-hmenu a:hover, .kvm-hmenuhoverA,  .kvm-hmenuhover a 
+{
+   color: #E2E8EE;
+   background-color:#777B6B;
+}
+
+/* end MenuItem */
+
+/* begin MenuSeparator */
+ul.kvm-hmenu li {
+   margin-left:expression(this.previousSibling==null?'0':'1px');
+}
+ul.kvm-hmenu li li{
+   margin-left:0;
+}
+
+span.kvm-hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -1px;
+   width: 1px;
+   height: 65px;
+   background: url('../images/menuseparator.png') center center no-repeat;
+}
+/* end MenuSeparator */
+
+/* begin MenuSubItem */
+.kvm-hmenu ul a 
+{
+   color: #D4D8CB !important;
+   float: left;
+}
+
+.kvm-hmenu ul a:hover, .kvm-hmenu ul .kvm-hmenuhover .kvm-hmenuhoverA 
+{
+   color: #FFFFFF !important;
+   background-position: left bottom;
+   border-color: #6E7364;
+   border-top-width: 1px !important;
+}
+
+/* end MenuSubItem */
+
+/* begin Box, Sheet */
+.kvm-sheet {
+   background:#CBCFBE;
+}
+/* end Box, Sheet */
+
+/* begin Layout */
+.kvm-content-layout, .kvm-content-layout-row, .kvm-layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.kvm-layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+/* end Layout */
+
+/* begin Button */
+.kvm-button-wrapper{
+   zoom: 1;
+}
+.kvm-button-wrapper .kvm-button-l, .kvm-button-wrapper .kvm-button-r {
+   display: none;
+}
+.kvm-button-wrapper .kvm-button {
+   float: left;
+}
+/* end Button */
+
+/* begin Box, Block */
+.kvm-block {
+   background:#D2D7C6;
+}
+/* end Box, Block */
+
+/* begin BlockHeader */
+.kvm-blockheader {
+   background:#D7DBCD;
+}
+/* end BlockHeader */
+
+/* begin Box, BlockContent */
+.kvm-blockcontent {
+   background:#D2D7C6;
+}
+.kvm-blockcontent-body ul li{
+   height: 1%;
+}
+
+/* end Box, BlockContent */
+
+/* begin Box, Post */
+.kvm-post {
+   background:#CBCFBE;
+}
+/* end Box, Post */
+
+/* begin PostIcons, PostHeaderIcons */
+.kvm-postheadericons span{
+   zoom: 1;
+}
+/* end PostIcons, PostHeaderIcons */
+
+/* begin PostBullets */
+.kvm-post ul li, .kvm-post ol ul li
+{
+   height: 1%;
+   padding-left: 13px;
+   /* makes "ul li" not to align behind the image if they are in the same line */
+  overflow-x: visible;
+   overflow-y: hidden;
+}
+
+.kvm-post ul ol li
+{
+   background: none;
+   padding-left: 0;
+   /* overrides overflow for "ul li" and sets the default value */
+  overflow: visible;
+}
+/* end PostBullets */
+
+/* begin PostIcons, PostFooterIcons */
+.kvm-postfootericons span{
+   zoom: 1;
+}
+/* end PostIcons, PostFooterIcons */
+
+/* begin Footer */
+.kvm-footer-body{
+   padding-right: 0;
+   zoom:1;
+}
+.kvm-footer{
+   zoom:1;
+   background:#35372F;
+}
+
+/* end Footer */
+
+/* begin LayoutCell, content */
+.kvm-sidebar1 {
+   width: auto;
+   background:#D2D7C6;
+}
+/* end LayoutCell, content */
+
+/* begin LayoutCell, sidebar1 */
+/* end LayoutCell, sidebar1 */
+
+form#form-login ul li
+{
+   behavior: expression(this.runtimeStyle.filter?'':this.runtimeStyle.filter="");
+}
+
+/* Plugin compatilibity. */
+
+/* 150675, googlemap */
+div.map img
+{
+   behavior: none;
+   filter: none;
+}
