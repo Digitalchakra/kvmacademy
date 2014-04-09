@@ -1,8 +1,0 @@
-/*---------------------------------------------
----	 	compatibility layer 				---
----		for JA Purity ii - left				---
-----------------------------------------------*/
-
-ul.menu.maximenuck li.maximenuck, .column {
-	overflow: visible !important;
-}
