@@ -19,13 +19,13 @@
 define('DB_NAME', 'kvmacademy');
 
 /** MySQL database username */
-define('DB_USER', 'rootacademy');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '#academy123@');
+define('DB_PASSWORD', 'password');
 
 /** MySQL hostname */
-define('DB_HOST', '118.67.248.238');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -50,7 +50,6 @@ define('AUTH_SALT',        'put your unique phrase here');
 define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
-define('FS_METHOD', 'direct');
 
 /**#@-*/
 

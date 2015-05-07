@@ -90,11 +90,8 @@ html {
 
 body {
 	background: #fff;
-	font-family: 'Droid Sans'!important;
 }
-h1, h2, h3, h4, h5, h6, a, p {
-font-family: "Droid Sans" !important;
-}
+
 article,
 aside,
 details,
@@ -566,8 +563,8 @@ header#masthead {
 header#masthead hgroup {
 	position: relative;
 	
-	padding-bottom: 20px;
-	padding-top: 20px;
+	padding-bottom: 45px;
+	padding-top: 45px;
 	zoom: 1;
 }
 
@@ -892,7 +889,6 @@ padding:0 8px;
 }
 #menu-topmenu li a{
 	color: #000;
-	font-size: 15px;	
 }
 #menu-topmenu li a:hover{
 	color: #11a448;
@@ -1012,9 +1008,8 @@ padding:0 8px;
 .main-navigation a {
 	color: #e2e2e2;
 	display: block;
-	/*font-weight: bold;*/
+	font-weight: bold;
 	text-decoration: none;
-	font-size: 16px;
 }
 
 .main-navigation.sticky {
@@ -1509,7 +1504,6 @@ article.page.post-with-thumbnail-icon .entry-main {
 	color: #666666; /* WordPress Images */ 
 	line-height: 1.6em;
 	zoom: 1;
-	font-size: 17px!important;
 }
 
 .entry-content:before {
@@ -1524,7 +1518,7 @@ article.page.post-with-thumbnail-icon .entry-main {
 }
 
 .entry-content a {
-	color: #11a448;
+	color: #248cc8;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
@@ -2491,22 +2485,18 @@ body.layout-full {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	color: #ffffff;
+	color: #b9b9b9;
 	float: left;
 	margin-bottom: 0;
 	padding: 0 15px;
-	font-size: 14px;
-	line-height: 22px;
 }
 
 #footer-widgets .widget a {
-	color: #ffffff;
-	font-size: 14px;
-	line-height: 22px;
+	color: #cccccc;
 }
 
 #footer-widgets .widget .widget-title {
-	color: #ffffff;
+	color: #e2e2e2;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -2516,7 +2506,7 @@ body.layout-full {
 ----------------------------------------------- */
 
 #text-4{
-
+margin: -20px 0 0 0;
 }
 /* =General Widget Styling
 ----------------------------------------------- */
@@ -2701,8 +2691,7 @@ body.layout-full {
 
 .widget_circleicon-widget .circle-icon-box h4 {
 	color: #3b3b3b;
-	font-size: 23px;
-	line-height: 29px;
+	font-size: 17px;
 	font-weight: bold;
 	margin-bottom: 0.8em;
 	margin-top: 0;
@@ -2710,8 +2699,7 @@ body.layout-full {
 
 .widget_circleicon-widget .circle-icon-box p.text {
 	color: #5e5e5e;
-	font-size: 16px;
-	line-height: 29px;
+	font-size: 13px;
 	margin: 0;
 	margin-bottom: 10px;
 }
@@ -2942,10 +2930,9 @@ body.layout-full {
 
 .widget_headline-widget h3 {
 	color: #666666;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 200;
 	margin: 0;
-	line-height: 34px;
 	padding-bottom: 20px;
 }
 
@@ -3630,7 +3617,7 @@ body.layout-full {
 color: #11a448;
 }
 .f16{font-size: 16px;}
-.w25{width:31%;}
+.w25{width:25%;}
 .w30{width:30%;}
 .w50{width:50%;}
 .w70{width:70%;}
@@ -3641,7 +3628,7 @@ color: #11a448;
 .display_none{display: none;}
 .entry-content ul li, .entry-content ol li{margin-top:8px;}
 .mtop15{margin-top:15px;}
-.mtop15 li a{text-decoration:none; color:#444444; line-height: 40px;}
+.mtop15 li a{text-decoration:none; color:#444444;}
 .mtop15 li a:hover{color:#11a448;}
 .p10{padding:10px!important;}
 .Mb10{margin-bottom:20px;}
@@ -3657,85 +3644,3 @@ color: #11a448;
 .contact a{color: #666666!important;}
 .p_none{padding:0!important;}
 .m_none {margin:0!important;}
-#text-5{margin-top: -14px;}
-
-.entry-content img {
-height: auto;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
--webkit-box-shadow: 0px 1px 10px rgba(0,0,0,0.175)!important;
--moz-box-shadow: 0px 1px 10px rgba(0,0,0,0.175)!important;
-box-shadow: 0px 1px 10px rgba(0,0,0,0.175)!important;
-max-width: 100%;
-margin-bottom: 10px;
-}
-
-#siteorigin-panels-image-2 img{margin-top: -39px;}
-#nav_menu-4{margin-top: 15px;}
-
-.mail:hover{color:#11a448!important;}
-
-.panel-grid-cell a{color: #5e5e5e; text-decoration:none;}
-.panel-grid-cell a:hover{color:#11a448;}
-
-
-
-a{outline:none!important;}
-img{outline:none!important;}
-
-div#nextend-accordion-menu-nextendaccordionmenuwidget-2 dl.level1 dt a, div#nextend-accordion-menu-nextendaccordionmenuwidget-2 dl.level1 dt a span{
-font-size: 14px!important;
-font-family: 'Droid Sans'!important;
-}
-
-article.post .entry-header h1.entry-title a, article.page .entry-header h1.entry-title a{font-size: 28px!important;}
-
-article.post .entry-categories, article.page .entry-categories{font-size: 14px;}
-.su-spoiler-title:hover{ color:#11a448!important; }
-.su-spoiler-title{font-size: 19px!important; font-weight:normal!important;}
-#FSContact1{max-width: 1080px; margin:0 auto;}
-
-#text-4 .textwidget center a img{padding:5px 6px; background-color: white;}
-
-/* ********************** table *********************************************** */
-
-.table, .table--contents {
-  width: 100%;
-}
-
-.table--contents {
-  overflow: hidden;
-}
-.table--contents thead th {
-  text-align: right;
-  text-transform: uppercase;
-}
-.table--contents tbody {
-  line-height: 150%;
-}
-.table--contents tbody td:first-of-type {
-  background-size: 34px 1.5em;
-  background-position: right;
-  position: relative;
-}
-.table--contents tbody td:first-of-type::after {
-  content: "••••••••••••••••••••";
-  color: rgba(42, 44, 33, 0.75);
-  display: block;
-  font-size: 66.66667%;
-  letter-spacing: 2.5em;
-  line-height: 1.5;
-  position: absolute;
-  right: -1.5em;
-  text-align: right;
-  bottom: 0;
-  vertical-align: bottom;
-  z-index: -1;
-}
-.table--contents tbody td:first-of-type span {
-  padding-right: 0.5em;
-}
-.table--contents tbody td:nth-of-type(2) {
-  /* text-align: right; */
-}

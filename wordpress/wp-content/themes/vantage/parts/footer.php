@@ -1,5 +1,5 @@
 <?php
-/* *
+/**
  * Part Name: Default Footer
  */
 ?>
@@ -15,6 +15,6 @@
 		</div><!-- .site-info -->
 	<?php endif; ?>
 
-	 <?php echo apply_filters( 'vantage_footer_attribution', '<!-- <div id="theme-attribution"> <div>Crafted By</div>'. sprintf( __('<a href="%s"><img src="http://localhost/wp/wp-content/uploads/2014/02/digitalchakra.png"></a>'), 'http://digitalchakra.in') . '</div> -->' ) ?> 
+	/* <?php echo apply_filters( 'vantage_footer_attribution', '<!-- <div id="theme-attribution"> <div>Crafted By</div>'. sprintf( __('<a href="%s"><img src="http://localhost/wp/wp-content/uploads/2014/02/digitalchakra.png"></a>'), 'http://digitalchakra.in') . '</div> -->' ) ?> */
 
 </footer><!-- #colophon .site-footer -->
